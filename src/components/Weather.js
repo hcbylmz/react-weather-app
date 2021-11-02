@@ -39,8 +39,8 @@ function Weather() {
   };
 
   //new api call
-  const getLatLon = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=22ba6a983a400f6fd7a05c3ddb7d3fe1`;
-  const baseURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=22ba6a983a400f6fd7a05c3ddb7d3fe1&units=metric`;
+  const getLatLon = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+  const baseURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`;
   function getDate(date) {
     const dayy = new Date(date);
     return dayy.getDay();
